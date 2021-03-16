@@ -1,0 +1,51 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Ajout d'une nouvelle classe</h4>
+                    </div>
+                    <div class="card-body">
+
+                        <form [formGroup]="addreclamationForm" (ngSubmit)="onFormSubmit()">
+
+                            <div  class="form-group">
+                                <div class="col-md-5">
+                                    <label class="col-md-5">Destinataire</label>
+                                    <input formControlName="idUser" name="iduser" class="form-control" type="number">
+                                    <mat-error>
+                                        <span *ngIf="!addreclamationForm.get('idUser').valid && addreclamationForm.get('idUser').touched">Choisir le destinataire SVP</span>
+                                    </mat-error>
+                                </div>
+                            </div>
+
+                            <div  class="col-md-6" style="    margin-top: 30px;">
+                                <label class="col-md-6 bold-label"> Donner l'objet de votre réclamation</label>
+                                <input formControlName="obj"   class="form-control ">
+                                <mat-error>
+                                    <span *ngIf="!addreclamationForm.get('obj').valid && addreclamationForm.get('obj').touched"> Saisir l'objet de votre réclamation svp</span>
+                                </mat-error>
+
+                            </div>
+
+                            <div  class="col-md-6" style="    margin-top: 30px;">
+                                <label class="col-md-6 bold-label">Saisir votre réclamation</label>
+                                <input formControlName="description"   class="form-control ">
+                                <mat-error>
+                                    <span *ngIf="!addreclamationForm.get('description').valid && addreclamationForm.get('description').touched">Saisir votre réclamation svp</span>
+                                </mat-error>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+
+                <button mat-raised-button type="submit"  class="btn btn-danger pull-center" (click)="onFormSubmit()">Enregistrer</button>
+
+            </div>
+        </div>
+    </div>
+</div>

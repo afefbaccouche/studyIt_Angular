@@ -1,0 +1,62 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Gestion des reclamations</h4>
+                        <p class="card-category"> Liste des reclamations</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table" >
+                                <thead class=" text-primary">
+                                <th>
+                                    ID
+                                </th>
+                                <th>
+                                    Nom de classe
+                                </th>
+
+                                <th>
+                                    Nombre d'élève
+                                </th>
+
+                                <th>
+                                    Niveau
+                                </th>
+                                </thead>
+
+                                <tbody *ngFor="let reclamation of reclamationList">
+                                <tr >
+                                    <td>
+                                        {{reclamation.id}}
+                                    </td>
+                                    <td>
+                                        {{reclamation.iduser.username}}
+                                    </td>
+                                    <td>
+                                        {{reclamation.obj}}
+                                    </td>
+
+                                    <td>
+                                        {{reclamation.description}}
+                                    </td>
+
+                                    <td>
+                                        <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="removereclamation(reclamation.id)" >supprimer</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <button mat-raised-button  style="width: 250px;" type="submit" class="btn btn-success pull-left"  (click)="navigate('./addreclamation')">Nouvelle réclamation </button>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+

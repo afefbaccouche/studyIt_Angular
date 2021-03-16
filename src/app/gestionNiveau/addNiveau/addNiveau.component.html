@@ -1,0 +1,31 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Ajout d'une nouvelle classe</h4>
+                    </div>
+                    <div class="card-body">
+
+                        <form [formGroup]="addniveauForm" (ngSubmit)="onFormSubmit()">
+
+                            <div  class="col-md-5" style="    margin-top: 30px;">
+                                <label class="col-md-5 bold-label">Nom de Niveaue</label>
+                                <input formControlName="libelle"   class="form-control ">
+                                <mat-error>
+                                    <span *ngIf="!addniveauForm.get('libelle').valid && addniveauForm.get('libelle').touched">Donner le nom du classe SVP</span>
+                                </mat-error>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+                <button mat-raised-button type="submit"  class="btn btn-danger pull-center" (click)="onFormSubmit()" >Enregistrer</button>
+
+            </div>
+        </div>
+    </div>
+</div>

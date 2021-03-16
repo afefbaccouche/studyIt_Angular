@@ -1,0 +1,64 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Ajout d'une nouvelle classe</h4>
+                    </div>
+                    <div class="card-body">
+
+                        <form [formGroup]="addForm" (ngSubmit)="onFormSubmit()">
+
+                            <div  class="col-md-5" style="    margin-top: 30px;">
+                                <label class="col-md-5 bold-label">Nom de classe</label>
+                                <input formControlName="classename"   class="form-control ">
+                                <mat-error>
+                                    <span *ngIf="!addForm.get('classename').valid && addForm.get('classename').touched">Donner le nom du classe SVP</span>
+                                </mat-error>
+
+                            </div>
+
+                            <div  class="form-group">
+                                <div class="col-md-5">
+                                    <label class="col-md-5">Capacité du classe</label>
+                                    <input formControlName="capacite" name="capacite" class="form-control" type="number">
+                                    <mat-error>
+                                        <span *ngIf="!addForm.get('capacite').valid && addForm.get('capacite').touched">Donner la capacité du classe SVP</span>
+                                    </mat-error>
+                                </div>
+                            </div>
+
+                            <div  class="form-group">
+                                <div class="col-md-5">
+                                    <label class="col-md-5">Niveau</label>
+                                    <input formControlName="idNiveau"   class="form-control" type="number">
+                                    <mat-error>
+                                        <span *ngIf="!addForm.get('idNiveau').valid && addForm.get('idNiveau').touched" >Donner le niveau SVP</span>
+                                    </mat-error>
+                                </div>
+                            </div>
+
+                            <div  class="form-group">
+                                <div class="col-md-5">
+                                    <label class="col-md-5">id user</label>
+                                    <input formControlName="idUser"  class="form-control" type="number">
+                                    <mat-error>
+                                        <span *ngIf="!addForm.get('idUser').valid && addForm.get('idUser').touched">Donner la capacité du classe SVP</span>
+                                        <!-- <span *ngIf="!addForm.get('capacite').value>99">>Donner un nombre inferieur à 100</span>-->
+                                    </mat-error>
+                                </div>
+                            </div>
+
+
+                        </form>
+
+                    </div>
+                </div>
+
+                <button mat-raised-button type="submit"  class="btn btn-danger pull-center" (click)="onFormSubmit()">Enregistrer</button>
+
+            </div>
+        </div>
+    </div>
+</div>

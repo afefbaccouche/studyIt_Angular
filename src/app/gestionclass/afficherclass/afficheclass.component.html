@@ -1,0 +1,63 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Gestion des classes</h4>
+                        <p class="card-category"> Liste des classes</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table" >
+                                <thead class=" text-primary">
+                                <th>
+                                    ID
+                                </th>
+                                <th>
+                                    Nom de classe
+                                </th>
+
+                                <th>
+                                    Nombre d'élève
+                                </th>
+                                <th>
+                                    Niveau
+                                </th>
+                                </thead>
+
+                                <tbody *ngFor="let class of classesList">
+                                <tr >
+                                    <td>
+                                        {{class.id}}
+                                    </td>
+                                    <td>
+                                        {{class.classname}}
+                                    </td>
+
+                                    <td>
+                                        {{class.capacite}}
+                                    </td>
+                                    <td>
+                                        {{class.idniveau.libelle}}
+                                    </td>
+
+                                    <td>
+                                        <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="removeClass(class.id)">supprimer</button>
+                                        <button mat-raised-button type="submit" class="btn btn-info pull-right" (click)="onSelectclasse(class.id)" >modifier</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <button mat-raised-button  style="width: 250px;" type="submit" class="btn btn-success pull-left"  (click)="navigate('./addclass')">Ajouter une classe </button>
+                <button mat-raised-button  style="width: 250px;" type="submit" class="btn btn-success pull-center" (click)="navigate('./afficheniveau')">Liste des niveau </button>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
